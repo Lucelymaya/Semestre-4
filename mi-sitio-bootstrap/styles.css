@@ -1,0 +1,32 @@
+/* Estilo general para imágenes */
+img {
+    max-width: 100%;     /* Escala automáticamente según el contenedor */
+    height: auto;        /* Mantiene proporción */
+    display: block;
+    margin: 0 auto;      /* Centra horizontalmente */
+    border-radius: 8px;  /* Esquinas redondeadas */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Estilo general para videos */
+video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Clase específica para reducir aún más el tamaño */
+.reducido {
+    width: 60%;       /* Puedes ajustar este valor a 40%, 50%, etc. */
+    max-width: 400px;
+}
+
+/* Estilo adicional en pantallas pequeñas */
+@media (max-width: 768px) {
+    .reducido {
+        width: 90%;
+    }
+}
