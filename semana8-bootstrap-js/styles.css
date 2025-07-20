@@ -1,11 +1,17 @@
-body {
-  background-color: #f8f9fa;
+/* Cambiar color del botón alerta */
+#btnAlerta {
+  background-color: orange;
+  color: black;
+  font-weight: bold;
+  border: none;
 }
 
-h1 {
-  font-family: 'Segoe UI', sans-serif;
+#btnAlerta:hover {
+  background-color: darkorange;
+  color: white;
 }
 
-footer a:hover {
-  text-decoration: underline;
+/* Margen extra abajo en encabezado */
+header {
+  margin-bottom: 20px;
 }
