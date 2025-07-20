@@ -1,38 +1,27 @@
-// Alerta personalizada
+// Botón de alerta
 function mostrarAlerta() {
-  alert("¡Gracias por visitar nuestra página!");
+  alert("¡Has hecho clic en el botón de alerta!");
 }
 
-// Validación del formulario
-document.getElementById("contactoForm").addEventListener("submit", function (event) {
+// Validación de formulario
+document.getElementById("formularioContacto").addEventListener("submit", function (event) {
   const nombre = document.getElementById("nombre");
-  const email = document.getElementById("email");
+  const correo = document.getElementById("correo");
   const mensaje = document.getElementById("mensaje");
 
-  let formValido = true;
+  let valido = true;
 
-  if (!nombre.value.trim()) {
-    nombre.classList.add("is-invalid");
-    formValido = false;
-  } else {
-    nombre.classList.remove("is-invalid");
-  }
+  [nombre, correo, mensaje].forEach((campo) => {
+    if (!campo.value.trim()) {
+      campo.classList.add("is-invalid");
+      valido = false;
+    } else {
+      campo.classList.remove("is-invalid");
+    }
+  });
 
-  if (!email.value.includes("@")) {
-    email.classList.add("is-invalid");
-    formValido = false;
-  } else {
-    email.classList.remove("is-invalid");
-  }
-
-  if (!mensaje.value.trim()) {
-    mensaje.classList.add("is-invalid");
-    formValido = false;
-  } else {
-    mensaje.classList.remove("is-invalid");
-  }
-
-  if (!formValido) {
-    event.preventDefault(); // Evita el envío del formulario
+  if (!valido) {
+    event.preventDefault();
+    event.stopPropagation();
   }
 });
