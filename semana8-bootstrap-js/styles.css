@@ -1,17 +1,19 @@
-/* Para que las imágenes del carrusel se vean completas sin recortarse */
-.carousel-item img {
+/* Ajusta el tamaño de las imágenes del carrusel sin recortarlas */
+.carousel-img {
   object-fit: contain;
-  height: 400px; /* Ajusta esta altura según prefieras */
+  height: 400px;
+  background-color: #000; /* Fondo para imágenes más pequeñas */
 }
 
-/* Personalización del botón */
-.btn-primary {
-  background-color: #007bff;
-  border-color: #007bff;
+/* Personalización del encabezado */
+header h1 {
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
 }
 
-/* Estilo para mensajes de error */
-.text-danger {
-  font-size: 0.9rem;
-  margin-top: 0.25rem;
+/* Estiliza tabla */
+table th, table td {
+  vertical-align: middle;
+  text-align: center;
 }

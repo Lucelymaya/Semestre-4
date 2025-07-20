@@ -1,42 +1,38 @@
-// Función para mostrar alerta al hacer clic en el botón
+// Mostrar alerta cuando el usuario hace clic en el botón
 function mostrarAlerta() {
   alert("¡Gracias por visitar nuestra página!");
 }
 
-// Función para validar el formulario de contacto
+// Validación del formulario
 function validarFormulario() {
-  let nombre = document.getElementById("nombre").value.trim();
-  let correo = document.getElementById("correo").value.trim();
-  let mensaje = document.getElementById("mensaje").value.trim();
-
-  let errorNombre = document.getElementById("errorNombre");
-  let errorCorreo = document.getElementById("errorCorreo");
-  let errorMensaje = document.getElementById("errorMensaje");
-
-  // Limpiar mensajes de error
-  errorNombre.textContent = "";
-  errorCorreo.textContent = "";
-  errorMensaje.textContent = "";
+  const nombre = document.getElementById("nombre").value.trim();
+  const correo = document.getElementById("correo").value.trim();
+  const mensaje = document.getElementById("mensaje").value.trim();
 
   let valido = true;
 
+  // Limpiar errores anteriores
+  document.getElementById("errorNombre").textContent = "";
+  document.getElementById("errorCorreo").textContent = "";
+  document.getElementById("errorMensaje").textContent = "";
+
   if (nombre === "") {
-    errorNombre.textContent = "Por favor ingresa tu nombre.";
+    document.getElementById("errorNombre").textContent = "El nombre es obligatorio.";
     valido = false;
   }
 
   if (correo === "") {
-    errorCorreo.textContent = "Por favor ingresa tu correo.";
+    document.getElementById("errorCorreo").textContent = "El correo electrónico es obligatorio.";
     valido = false;
   } else if (!/\S+@\S+\.\S+/.test(correo)) {
-    errorCorreo.textContent = "Por favor ingresa un correo válido.";
+    document.getElementById("errorCorreo").textContent = "Ingresa un correo válido.";
     valido = false;
   }
 
   if (mensaje === "") {
-    errorMensaje.textContent = "Por favor ingresa un mensaje.";
+    document.getElementById("errorMensaje").textContent = "El mensaje es obligatorio.";
     valido = false;
   }
 
-  return valido; // si es false, no se envía el formulario
+  return valido;
 }
