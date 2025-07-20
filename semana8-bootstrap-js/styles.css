@@ -1,25 +1,16 @@
-/* styles.css */
-
-/* Personalizar el botón de alerta */
-#btnAlerta {
-  background-color: #f0ad4e; /* tono naranja */
-  border-color: #eea236;
-  font-weight: bold;
+/* Estilo personalizado para el encabezado */
+header {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Cambiar color de borde para inputs inválidos */
-.is-invalid {
-  border-color: #dc3545 !important; /* rojo bootstrap */
-  box-shadow: 0 0 5px rgba(220, 53, 69, 0.5);
+/* Cambiar color de fondo del botón */
+.btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
 }
 
-/* Cambiar fondo de la tabla para mejorar contraste */
-table.table {
-  background-color: #f8f9fa;
-}
-
-/* Personalizar pie de página */
-footer {
-  font-style: italic;
-  font-size: 0.9rem;
+/* Personalizar el carrusel (opcional) */
+.carousel-item img {
+  height: 300px;
+  object-fit: cover;
 }

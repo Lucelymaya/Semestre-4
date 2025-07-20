@@ -1,51 +1,37 @@
-// script.js
+function mostrarAlerta() {
+  alert("¡Gracias por visitar nuestro sitio!");
+}
 
-// Función para mostrar alerta personalizada
-document.getElementById('btnAlerta').addEventListener('click', function() {
-  alert('¡Hola! Has hecho clic en el botón de alerta.');
-});
-
-// Validación del formulario
-const formulario = document.getElementById('formularioContacto');
-
-formulario.addEventListener('submit', function(event) {
-  event.preventDefault(); // Evitar envío automático para validar
-
-  // Campos del formulario
-  const nombre = document.getElementById('nombre');
-  const correo = document.getElementById('correo');
-  const mensaje = document.getElementById('mensaje');
+function validarFormulario() {
+  const nombre = document.getElementById("nombre").value.trim();
+  const correo = document.getElementById("correo").value.trim();
+  const mensaje = document.getElementById("mensaje").value.trim();
 
   let valido = true;
 
   // Validar nombre
-  if (nombre.value.trim() === '') {
-    nombre.classList.add('is-invalid');
+  if (nombre === "") {
+    document.getElementById("errorNombre").textContent = "Por favor ingresa tu nombre.";
     valido = false;
   } else {
-    nombre.classList.remove('is-invalid');
+    document.getElementById("errorNombre").textContent = "";
   }
 
-  // Validar correo (simple)
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if (!emailRegex.test(correo.value.trim())) {
-    correo.classList.add('is-invalid');
+  // Validar correo
+  if (!correo.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+    document.getElementById("errorCorreo").textContent = "Ingresa un correo válido.";
     valido = false;
   } else {
-    correo.classList.remove('is-invalid');
+    document.getElementById("errorCorreo").textContent = "";
   }
 
   // Validar mensaje
-  if (mensaje.value.trim() === '') {
-    mensaje.classList.add('is-invalid');
+  if (mensaje === "") {
+    document.getElementById("errorMensaje").textContent = "Por favor escribe un mensaje.";
     valido = false;
   } else {
-    mensaje.classList.remove('is-invalid');
+    document.getElementById("errorMensaje").textContent = "";
   }
 
-  // Si todo es válido, enviar (o simular envío)
-  if (valido) {
-    alert('Formulario enviado correctamente. ¡Gracias!');
-    formulario.reset(); // Limpia formulario
-  }
-});
+  return valido;
+}
