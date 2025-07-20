@@ -1,49 +1,42 @@
-// Función para mostrar alerta personalizada
+// Función para mostrar alerta al hacer clic en el botón
 function mostrarAlerta() {
-  alert("¡Hola! Gracias por visitar nuestro sitio.");
+  alert("¡Gracias por visitar nuestra página!");
 }
 
-// Validación dinámica del formulario
+// Función para validar el formulario de contacto
 function validarFormulario() {
-  // Obtener valores
-  const nombre = document.getElementById("nombre").value.trim();
-  const correo = document.getElementById("correo").value.trim();
-  const mensaje = document.getElementById("mensaje").value.trim();
+  let nombre = document.getElementById("nombre").value.trim();
+  let correo = document.getElementById("correo").value.trim();
+  let mensaje = document.getElementById("mensaje").value.trim();
 
-  // Elementos para mostrar errores
-  const errorNombre = document.getElementById("errorNombre");
-  const errorCorreo = document.getElementById("errorCorreo");
-  const errorMensaje = document.getElementById("errorMensaje");
+  let errorNombre = document.getElementById("errorNombre");
+  let errorCorreo = document.getElementById("errorCorreo");
+  let errorMensaje = document.getElementById("errorMensaje");
 
-  // Limpiar mensajes previos
+  // Limpiar mensajes de error
   errorNombre.textContent = "";
   errorCorreo.textContent = "";
   errorMensaje.textContent = "";
 
   let valido = true;
 
-  // Validar nombre
   if (nombre === "") {
-    errorNombre.textContent = "Por favor, ingresa tu nombre.";
+    errorNombre.textContent = "Por favor ingresa tu nombre.";
     valido = false;
   }
 
-  // Validar correo (con regex básico)
-  const regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (correo === "") {
-    errorCorreo.textContent = "Por favor, ingresa tu correo electrónico.";
+    errorCorreo.textContent = "Por favor ingresa tu correo.";
     valido = false;
-  } else if (!regexCorreo.test(correo)) {
-    errorCorreo.textContent = "Por favor, ingresa un correo válido.";
+  } else if (!/\S+@\S+\.\S+/.test(correo)) {
+    errorCorreo.textContent = "Por favor ingresa un correo válido.";
     valido = false;
   }
 
-  // Validar mensaje
   if (mensaje === "") {
-    errorMensaje.textContent = "Por favor, escribe un mensaje.";
+    errorMensaje.textContent = "Por favor ingresa un mensaje.";
     valido = false;
   }
 
-  // Si todo está bien, se puede enviar el formulario (puedes añadir aquí código para enviarlo)
-  return valido;
+  return valido; // si es false, no se envía el formulario
 }
