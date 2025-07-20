@@ -1,46 +1,51 @@
-// Función para mostrar alerta personalizada al hacer clic en el botón
-document.getElementById('btnAlerta').addEventListener('click', () => {
-  alert('¡Hola! Gracias por visitar mi proyecto Bootstrap con JavaScript.');
+// script.js
+
+// Función para mostrar alerta personalizada
+document.getElementById('btnAlerta').addEventListener('click', function() {
+  alert('¡Hola! Has hecho clic en el botón de alerta.');
 });
 
-// Validación del formulario al enviarlo
+// Validación del formulario
 const formulario = document.getElementById('formularioContacto');
 
-formulario.addEventListener('submit', function (event) {
-  event.preventDefault(); // Evita envío por defecto
+formulario.addEventListener('submit', function(event) {
+  event.preventDefault(); // Evitar envío automático para validar
 
-  // Limpia estados anteriores
-  const inputs = formulario.querySelectorAll('input, textarea');
-  inputs.forEach(input => {
-    input.classList.remove('is-invalid');
-  });
+  // Campos del formulario
+  const nombre = document.getElementById('nombre');
+  const correo = document.getElementById('correo');
+  const mensaje = document.getElementById('mensaje');
 
   let valido = true;
 
   // Validar nombre
-  const nombre = document.getElementById('nombre');
-  if (!nombre.value.trim()) {
+  if (nombre.value.trim() === '') {
     nombre.classList.add('is-invalid');
     valido = false;
+  } else {
+    nombre.classList.remove('is-invalid');
   }
 
-  // Validar correo con patrón simple
-  const correo = document.getElementById('correo');
+  // Validar correo (simple)
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(correo.value.trim())) {
     correo.classList.add('is-invalid');
     valido = false;
+  } else {
+    correo.classList.remove('is-invalid');
   }
 
   // Validar mensaje
-  const mensaje = document.getElementById('mensaje');
-  if (!mensaje.value.trim()) {
+  if (mensaje.value.trim() === '') {
     mensaje.classList.add('is-invalid');
     valido = false;
+  } else {
+    mensaje.classList.remove('is-invalid');
   }
 
+  // Si todo es válido, enviar (o simular envío)
   if (valido) {
     alert('Formulario enviado correctamente. ¡Gracias!');
-    formulario.reset();
+    formulario.reset(); // Limpia formulario
   }
 });

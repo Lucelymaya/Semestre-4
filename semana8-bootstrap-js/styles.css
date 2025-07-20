@@ -1,33 +1,25 @@
-/* Personalización del encabezado */
-header {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+/* styles.css */
 
-/* Cambiar el color del botón de alerta */
+/* Personalizar el botón de alerta */
 #btnAlerta {
-  background-color: #ff8800;
-  border-color: #ff8800;
-  transition: background-color 0.3s ease;
+  background-color: #f0ad4e; /* tono naranja */
+  border-color: #eea236;
+  font-weight: bold;
 }
 
-#btnAlerta:hover {
-  background-color: #ff6600;
-  border-color: #ff6600;
+/* Cambiar color de borde para inputs inválidos */
+.is-invalid {
+  border-color: #dc3545 !important; /* rojo bootstrap */
+  box-shadow: 0 0 5px rgba(220, 53, 69, 0.5);
 }
 
-/* Formulario: destacar campos con error */
-input:invalid, textarea:invalid {
-  border-color: #dc3545;
+/* Cambiar fondo de la tabla para mejorar contraste */
+table.table {
+  background-color: #f8f9fa;
 }
 
-/* Pie de página: un toque personal */
-footer p {
+/* Personalizar pie de página */
+footer {
+  font-style: italic;
   font-size: 0.9rem;
-}
-
-/* Responsive adjustments */
-@media (max-width: 576px) {
-  header h1 {
-    font-size: 1.5rem;
-  }
 }
