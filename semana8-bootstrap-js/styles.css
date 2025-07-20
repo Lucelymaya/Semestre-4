@@ -1,16 +1,17 @@
-/* Estilo personalizado para el encabezado */
-header {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Cambiar color de fondo del botón */
-.btn-success {
-  background-color: #28a745;
-  border-color: #28a745;
-}
-
-/* Personalizar el carrusel (opcional) */
+/* Para que las imágenes del carrusel se vean completas sin recortarse */
 .carousel-item img {
-  height: 300px;
-  object-fit: cover;
+  object-fit: contain;
+  height: 400px; /* Ajusta esta altura según prefieras */
+}
+
+/* Personalización del botón */
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+/* Estilo para mensajes de error */
+.text-danger {
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
 }
