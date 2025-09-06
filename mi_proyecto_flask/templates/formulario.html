@@ -1,34 +1,20 @@
 {% extends "base.html" %}
-{% block title %}{{ 'Nuevo producto' if modo=='crear' else 'Editar producto' }}{% endblock %}
 
-{% block content %}
-<h1>Fromulario de creación de producto </h1>
-<h1>{{ 'Nuevo producto' if modo=='crear' else 'Editar producto' }}</h1>
-
-<form method="post" novalidate class="form-card">
-  {{ form.hidden_tag() }}
-
-  <div class="form-group">
-    <label>{{ form.nombre.label }}</label>
-    {{ form.nombre(class="input") }}
-    {% for e in form.nombre.errors %}<small class="error">{{ e }}</small>{% endfor %}
+{% block contenido %}
+<h2>Formulario de Registro</h2>
+<form action="{{ url_for('guardar_datos') }}" method="post" class="mt-4">
+  <div class="mb-3">
+    <label for="nombre" class="form-label">Nombre</label>
+    <input type="text" class="form-control" id="nombre" name="nombre" required>
   </div>
-
-  <div class="form-group">
-    <label>{{ form.cantidad.label }}</label>
-    {{ form.cantidad(class="input") }}
-    {% for e in form.cantidad.errors %}<small class="error">{{ e }}</small>{% endfor %}
+  <div class="mb-3">
+    <label for="edad" class="form-label">Edad</label>
+    <input type="number" class="form-control" id="edad" name="edad" required min="0">
   </div>
-
-  <div class="form-group">
-    <label>{{ form.precio.label }}</label>
-    {{ form.precio(class="input") }}
-    {% for e in form.precio.errors %}<small class="error">{{ e }}</small>{% endfor %}
+  <div class="mb-3">
+    <label for="edad" class="form-label">Correo</label>
+    <input type="text" class="form-control" id="Correo" name="Correo" required min="0">
   </div>
-
-  <div class="form-actions">
-    {{ form.submit(class="btn btn-primary") }}
-    <a class="btn btn-secondary" href="{{ url_for('listar_productos') }}">Cancelar</a>
-  </div>
-</form>
+  <button type="submit" class="btn btn-primary">Guardar</button>
+  </form>
 {% endblock %}

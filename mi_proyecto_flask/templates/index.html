@@ -1,8 +1,19 @@
-{% extends "base.html"%}
-{% block title %}Inicio{% endblock %}
+{% extends "layout.html" %}
+
+{% block title %}Inicio - Amazonia Market{% endblock %}
 
 {% block content %}
-<h1>Bienvenido a mi sitio Flask</h1>
-<p>Esta es la página de inicio de mi aplicación Flask.</p>
-<p>Utiliza el menú de navegación para explorar más.</p>
+<div class="text-center">
+    <h1 class="mb-4">Bienvenidos</h1>
+    <p class="lead"></p>
+    <img src="{{ url_for('static', filename='images/logo.png') }}" class="img-fluid rounded shadow mb-4" alt="Logo empresa" style="max-width: 400px;">
+
+    
+
+            <p class="mt-4">Comienza ahora navegando a nuestro formulario para registrarte o explorar nuestros datos.</p>
+            <a href="{{ url_for('formulario') }}" class="btn btn-success btn-lg me-2">Ir al Formulario</a>
+            <a href="{{ url_for('leer_txt') }}" class="btn btn-outline-primary btn-lg">Ver Datos Guardados</a>
+        </div>
+    </div>
+</div>
 {% endblock %}
